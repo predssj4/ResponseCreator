@@ -22,9 +22,10 @@ And then it will be passed to client.
 ```csharp
 CompanyDTO: IInputDTO
 ```
-2. Register dependency in your DI container.
+2. Register dependency in your DI container. Or use ResponseCreatorAutofacModule  for Autofac.
 ```csharp
-IResponseCreator as ResponseCreator
+ResponseCreator as  IResponseCreator
+InputValidationAggregator as IInputValidationAggregator
 ```
 
 3. Inject IResponseCreator into your ApplicationService
