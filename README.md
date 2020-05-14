@@ -1,3 +1,5 @@
+# ResponseCreator 0.1.1
+
 # Purpose
 This package has been created to standardize communication way between ASP.NET Core WebAPI and SPA clients like Vue, React or Angular.
 
@@ -17,56 +19,62 @@ And then it will be passed to client.
    **How to use**
 
 1. your ExampleDTO should inherit after IInputDTO.
-
-	    CompanyDTO: IInputDTO
-
+```csharp
+CompanyDTO: IInputDTO
+```
 2. Register dependency in your DI container.
-	 Use IResponseCreator as ResponseCreator
+```csharp
+IResponseCreator as ResponseCreator
+```
+
 3. Inject IResponseCreator into your ApplicationService
-
-	    public CompanyService(IResponseCreator responseCreator)
-	    {
-	    	this._responseCreator = responseCreator
-	    }
+```csharp
+public CompanyService(IResponseCreator responseCreator)
+{
+    this._responseCreator = responseCreator;
+}
+```
 4. Validate your input in your service method or wherever you want
+```csharp
+public  NewCompanyDTO  CreateNewCompany(CompanyDTO  input) 
+{
+    input.ValidateInput(this._responseCreator);
 
-	    public  NewCompanyDTO  CreateNewCompany(CompanyDTO  input) 
-	    {
-		    input.ValidateInput(this._responseCreator);
+    if(!this._responseCreator.IsValid())
+    {
+    	// write some errors to response creator using
+    	this._responseCreator.AddMessage(...)
+    }
 
-		    if(!this._responseCreator.IsValid())
-		    {
-			    // write some errors to response creator using
-			    this._responseCreator.AddMessage(...)
-		    }
-		    
-		    // the rest of code if input is fine
-	    }
-
+    // the rest of code if input is fine
+}
+```
 5. To process validations use InputValidator inside method ValidateInput from your InputDTO class.
+```csharp
+var iv = new InputValidator<CompanyDTO>(this, responseCreator);
 
-	   var iv = new InputValidator<CompanyDTO>(this, responseCreator);
+iv.ForString(x => x.Name)
+   .MinLength(1)
+   .MaxLength(100);
 
-       iv.ForString(x => x.Name)
-           .MinLength(1)
-           .MaxLength(100);
-
-       iv.ForString(x => x.TaxNumber)
-           .MinLength(10)
-           .MaxLength(10);
+iv.ForString(x => x.TaxNumber)
+   .MinLength(10)
+   .MaxLength(10);
+```
 6. To create response just use IResponseCreator in you Controller action method like this.
-
-   		[HttpPost]
-	    [Route("new")]
-	    public IActionResult CreateNewCompany(CompanyDTO input)
-	    {
-		     NewCompanyDTO responseData = this.companyService.CreateNewCompany(input);
-            if (this._responseCreator.IsValid())
-            {
-                return Ok(this._responseCreator.CreteResponse(responseData));
-            }
-            else
-            {
-                return BadRequest(this._responseCreator.CreateResponseWithNoData());
-            }
-        }
+```csharp
+[HttpPost]
+[Route("new")]
+public IActionResult CreateNewCompany(CompanyDTO input)
+{
+    NewCompanyDTO responseData = this.companyService.CreateNewCompany(input);
+    if (this._responseCreator.IsValid())
+    {
+    	return Ok(this._responseCreator.CreteResponse(responseData));
+    }
+    else
+    {
+    	return BadRequest(this._responseCreator.CreateResponseWithNoData());
+    }
+}
+```
