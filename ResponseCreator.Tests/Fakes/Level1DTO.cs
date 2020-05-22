@@ -1,5 +1,5 @@
 ﻿using ResponseCreator.Abstract;
-using ResponseCreator.Tests.Validation;
+using ResponseCreator.Tests.ValidationTests;
 
 namespace ResponseCreator.Tests.Fakes
 {
@@ -13,7 +13,7 @@ namespace ResponseCreator.Tests.Fakes
             var iv = new InputValidator<Level1DTO>(this, responseCreator);
 
             iv.ForString(x => x.NameTest)
-                .MinLength(1, NastedDTOValidationTests.TooShortValidationResult);
+                .MinLength(1, NestedDTOValidationTests.TooShortValidationResult);
 
             this.Level2.ValidateInput(responseCreator, nameof(Level2));
         }

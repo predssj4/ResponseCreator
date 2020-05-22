@@ -16,7 +16,7 @@ namespace ResponseCreator.Validators
             this._responseCreator = responseCreator;
         }
 
-        public void InsertValidationResult(string validationResult)
+        protected void InsertValidationResult(string validationResult)
         {
             _responseCreator.AddValidationResult(this._key, validationResult);
         }

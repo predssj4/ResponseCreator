@@ -2,21 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
     <Authors>Adrian Kondracki (Revelsoft technologies)</Authors>
     <Company>Revelsoft technologies</Company>
     <Description>A simple library to communicate between ASP.NET CORE WebAPI applications and clients like SPA apps.</Description>
     <PackageTags>ASP.NET Core, API Response</PackageTags>
-    <AssemblyVersion>0.0.1.1</AssemblyVersion>
+    <AssemblyVersion>0.1.2</AssemblyVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageProjectUrl>https://github.com/predssj4/ResponseCreator</PackageProjectUrl>
-    <FileVersion>0.0.1.1</FileVersion>
+    <FileVersion>0.1.2</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="5.2.0" />
     <PackageReference Include="nuget.commandline" Version="5.5.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

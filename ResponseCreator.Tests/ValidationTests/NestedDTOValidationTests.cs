@@ -4,9 +4,9 @@ using ResponseCreator.Tests.Fakes;
 using Shouldly;
 using Xunit;
 
-namespace ResponseCreator.Tests.Validation
+namespace ResponseCreator.Tests.ValidationTests
 {
-    public class NastedDTOValidationTests
+    public class NestedDTOValidationTests
     {
         public const string TooShortValidationResult = "TooShort";
 
