@@ -4,7 +4,7 @@ using ResponseCreator.Tests.DataFactories;
 using Shouldly;
 using Xunit;
 
-namespace ResponseCreator.Tests.Validation
+namespace ResponseCreator.Tests.ValidationTests
 {
     public class StringValidationTests
     {

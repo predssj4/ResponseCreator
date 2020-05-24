@@ -16,5 +16,21 @@ namespace ResponseCreator.Tests.Fakes
             iv.ForString(x => x.PropertyLevel3)
                 .MinLength(1);
         }
+
+        public void ValidateInputWithCustomKeys(IResponseCreator responseCreator, string prefix)
+        {
+            var iv = new InputValidator<Level3DTO>(this, responseCreator, prefix);
+
+            iv.ForString(x => x.PropertyLevel3, "propertyLevel3Custom")
+                .MinLength(1);
+        }
+
+        public void ValidateInputWithPrefixOverwriting(IResponseCreator responseCreator, string prefix)
+        {
+            var iv = new InputValidator<Level3DTO>(this, responseCreator, prefix);
+
+            iv.ForString(x => x.PropertyLevel3, propertyCustomPrefix: "prefixOn3" )
+                .MinLength(1);
+        }
     }
 }

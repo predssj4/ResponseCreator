@@ -19,13 +19,13 @@ namespace ResponseCreator
             this._prefix = prefix;
         }
 
-        public StringValidator ForString(Expression<Func<T, string>> expression, string key = null, string prefix = null)
+        public StringValidator ForString(Expression<Func<T, string>> expression, string key = null, string propertyCustomPrefix = null)
         {
             string result = expression.Compile().Invoke(_objectUnderValidation);
 
-            string currentKey = key ?? expression.GetNameFromMemberExpression();
+            string currentKey = key ?? expression.GetNameFromMemberExpression(); 
 
-            return new StringValidator(result, this._responseCreator, currentKey, prefix ?? _prefix);
+            return new StringValidator(result, this._responseCreator, currentKey, propertyCustomPrefix ?? _prefix);
         }
     }
 }

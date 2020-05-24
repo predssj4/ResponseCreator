@@ -11,7 +11,7 @@ namespace ResponseCreator.Tests.ValidationTests
         public const string TooShortValidationResult = "TooShort";
 
         [Theory]
-        [InlineData("", "nameTest", "", "level2_nameTest", false, "TooShortOnBothLevels_ResultsAccessibleUnderGivenKeys" )]
+        [InlineData("", "nameTest", "", "level2_nameFromLevel2", false, "TooShortOnBothLevels_ResultsAccessibleUnderGivenKeys" )]
         public void ValidateNestedInput(string level1Input, string level1Key, string level2Input, string level2Key,
             bool isValid, string displayMessage)
         {
@@ -21,7 +21,11 @@ namespace ResponseCreator.Tests.ValidationTests
                 NameTest = level1Input,
                 Level2 = new Level2DTO()
                 {
-                    NameTest = level2Input
+                    NameFromLevel2 = level2Input,
+                    Level3Dto = new Level3DTO()
+                    {
+                        PropertyLevel3 = "some_longer_text"
+                    }
                 }
             };
 

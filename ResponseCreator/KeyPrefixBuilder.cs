@@ -4,7 +4,7 @@ namespace ResponseCreator
 {
     public class KeyPrefixBuilder
     {
-        private  const string PrefixKeySeparator = "_";
+        private const string PrefixKeySeparator = "_";
 
         public static string CreateKey(string key)
         {
@@ -23,12 +23,12 @@ namespace ResponseCreator
             }
         }
 
-        public static string JoinPrefixes(string firstPrefix, string secondPrefix)
+        public static string JoinPrefixes(string first, string second)
         {
-            return Join(firstPrefix, secondPrefix);
+            return $"{first.ToCamelCase()}{PrefixKeySeparator}{second.ToCamelCase()}";
         }
 
-        private static string Join(string first, string second)
+        public static string Join(string first, string second)
         {
             return $"{first.ToCamelCase()}{PrefixKeySeparator}{second.ToCamelCase()}";
         }
