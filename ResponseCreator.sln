@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResponseCreator", "ResponseCreator\ResponseCreator.csproj", "{5BE54407-2DB4-4F79-8129-E199D7E75BCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResponseCreator.Tests", "ResponseCreator.Tests\ResponseCreator.Tests.csproj", "{3B684393-CD46-40B6-960D-C64D94F57420}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResponseCreator.Tests", "ResponseCreator.Tests\ResponseCreator.Tests.csproj", "{3B684393-CD46-40B6-960D-C64D94F57420}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

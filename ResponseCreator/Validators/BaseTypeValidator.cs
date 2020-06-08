@@ -1,12 +1,15 @@
-﻿using ResponseCreator.Abstract;
+﻿using System.Dynamic;
+using ResponseCreator.Abstract;
+using ResponseCreator.Translations;
 
 namespace ResponseCreator.Validators
 {
     public class BaseTypeValidator<T>
     {
-        private readonly string _key;
-
         protected T ObjectUnderValidation;
+        protected IValidationMessagesManager MessagesManager;
+
+        private readonly string _key;
         private readonly IResponseCreator _responseCreator;
 
         public BaseTypeValidator(T objectUnderValidation, IResponseCreator responseCreator, string key, string keyPrefix = null)
@@ -14,6 +17,8 @@ namespace ResponseCreator.Validators
             this.ObjectUnderValidation = objectUnderValidation;
             this._key = CreateKey(key, keyPrefix);
             this._responseCreator = responseCreator;
+
+            this.MessagesManager = ValidationMessagesManager.GetValidationMessagesManager;
         }
 
         protected void InsertValidationResult(string validationResult)
@@ -25,5 +30,6 @@ namespace ResponseCreator.Validators
         {
             return KeyPrefixBuilder.CreateKeyWithPrefix(key, prefix);
         }
+
     }
 }

@@ -2,17 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Version>0.1.2</Version>
+    <Version>0.1.2.12</Version>
     <Authors>Adrian Kondracki (Revelsoft technologies)</Authors>
     <Company>Revelsoft technologies</Company>
     <Description>A simple library to communicate between ASP.NET CORE WebAPI applications and clients like SPA apps.</Description>
     <PackageTags>ASP.NET Core, API Response</PackageTags>
-    <AssemblyVersion>0.1.2</AssemblyVersion>
+    <AssemblyVersion>0.1.2.12</AssemblyVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageProjectUrl>https://github.com/predssj4/ResponseCreator</PackageProjectUrl>
-    <FileVersion>0.1.2</FileVersion>
+    <FileVersion>0.1.2.12</FileVersion>
+    <PackageReleaseNotes>Resources for given cultures</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,21 +28,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Resources\ValidationMessages.Designer.cs">
+    <Compile Update="lib\netcore\res1.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>ValidationMessages.resx</DependentUpon>
+      <DependentUpon>res1.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\ValidationMessages.pl-PL.resx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <EmbeddedResource Update="lib\netcore\pl\res1.pl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\ValidationMessages.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ValidationMessages.Designer.cs</LastGenOutput>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <EmbeddedResource Update="lib\netcore\res1.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>res1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

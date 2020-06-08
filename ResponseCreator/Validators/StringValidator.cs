@@ -1,6 +1,8 @@
-﻿using ResponseCreator.Abstract;
+﻿using System.Diagnostics;
+using System.Threading;
+using ResponseCreator.Abstract;
 using ResponseCreator.Extensions.String;
-using ResponseCreator.Resources;
+using ResponseCreator.Translations;
 
 namespace ResponseCreator.Validators
 {
@@ -18,7 +20,7 @@ namespace ResponseCreator.Validators
         {
             if (string.IsNullOrWhiteSpace(this.ObjectUnderValidation) || this.ObjectUnderValidation.Length < minLength)
             {
-                this.InsertValidationResult(customMessage ??  ValidationMessages.NoShorterThen.ReFormat(minLength));
+                this.InsertValidationResult(customMessage ?? this.MessagesManager.GetValidationMessageByKey(ValidationMessagesKeys.NoShorterThen, minLength));
             }
 
             return this;
@@ -34,7 +36,7 @@ namespace ResponseCreator.Validators
         {
             if (this.ObjectUnderValidation != null && this.ObjectUnderValidation.Length > maxLength)
             {
-                this.InsertValidationResult(customMessage ?? ValidationMessages.NoLongerThen.ReFormat(maxLength));
+                this.InsertValidationResult(customMessage ?? this.MessagesManager.GetValidationMessageByKey(ValidationMessagesKeys.NoShorterThen, maxLength));
             }
 
             return this;
