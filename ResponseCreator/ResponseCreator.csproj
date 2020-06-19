@@ -27,22 +27,4 @@
     <Folder Include="Extensions\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="lib\netcore\res1.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>res1.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="lib\netcore\pl\res1.pl.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="lib\netcore\res1.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>res1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-
 </Project>
