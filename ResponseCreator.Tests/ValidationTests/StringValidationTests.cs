@@ -46,5 +46,24 @@ namespace ResponseCreator.Tests.ValidationTests
                 actualValidationResults.ShouldContain(expectedError);
             });
         }
+
+        [Theory]
+        [InlineData(default(string), true, "DefaultValue_HasValidationErrors")]
+        [InlineData("some_not_default_value", false, "NotDefaultValue_NoValidationErrors")]
+        public void NotDefault(string input, bool hasErrors, string displayMessage)
+        {
+            // arrange
+            string key = "string_key";
+
+            IResponseCreator responseCreator = ResponseCreatorDataFactory.Create();
+            var inputValidator = new InputValidator<string>(input, responseCreator);
+
+            // act
+            inputValidator.ForString(x => x, key)
+                .NotDefault();
+
+            // arrange
+            responseCreator.GetValidationResultsForKey(key).Any().ShouldBe(hasErrors, displayMessage);
+        }
     }
 }

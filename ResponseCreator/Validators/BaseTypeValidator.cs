@@ -1,4 +1,5 @@
-﻿using System.Dynamic;
+﻿using System.Collections.Generic;
+using System.Dynamic;
 using ResponseCreator.Abstract;
 using ResponseCreator.Translations;
 
@@ -19,6 +20,14 @@ namespace ResponseCreator.Validators
             this._responseCreator = responseCreator;
 
             this.MessagesManager = ValidationMessagesManager.GetValidationMessagesManager;
+        }
+
+        protected void NotDefault(string customMessage = null)
+        {
+            if (EqualityComparer<T>.Default.Equals(this.ObjectUnderValidation, default(T)))
+            {
+                this.InsertValidationResult(customMessage ?? this.MessagesManager.GetValidationMessageByKey(ValidationMessagesKeys.IntNotDefault));
+            }
         }
 
         protected void InsertValidationResult(string validationResult)

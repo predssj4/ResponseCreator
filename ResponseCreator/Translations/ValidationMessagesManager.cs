@@ -40,5 +40,8 @@ namespace ResponseCreator.Translations
         public const string NoLongerThen = nameof(NoLongerThen);
         public const string NoShorterThen = nameof(NoShorterThen);
         public const string Required = nameof(Required);
+        public const string IntNotDefault = nameof(IntNotDefault);
+        public const string NumberInRange = nameof(NumberInRange);
+        public const string InvalidCaptcha = nameof(InvalidCaptcha);
     }
 }

@@ -41,5 +41,12 @@ namespace ResponseCreator.Validators
 
             return this;
         }
+
+        public new StringValidator NotDefault(string customMessage = null)
+        {
+            base.NotDefault(customMessage);
+
+            return this;
+        }
     }
 }
