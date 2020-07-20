@@ -14,6 +14,9 @@ namespace ResponseCreator.Translations
             {ValidationMessagesKeys.NumberInRange, "Wartość powinna wynosić od {0} do {1}."},
             {ValidationMessagesKeys.IntNotDefault, "Pole powinno mieć wartość różną od 0."},
             {ValidationMessagesKeys.InvalidCaptcha, "Pole z CAPTCHA jest niepoprawne uzupełnione."},
+            {ValidationMessagesKeys.FileTooBig, "Plik jest zbyt duży."},
+            {ValidationMessagesKeys.WrongFileFormat, "Plik jest w nieodpowiednim formacie. Dopuszczalne formaty: {0}."},
+            {ValidationMessagesKeys.OrderTooBig, "Zdjęcia w zamówieniu  sumarycznie są zbyt duże. Maksymalny rozmiar wszystkich zdjęć to {0} MB."},
         };
 
         public static IDictionary<string, string> EnglishUsTranslations = new Dictionary<string, string>()
@@ -23,7 +26,10 @@ namespace ResponseCreator.Translations
             {ValidationMessagesKeys.Required, "Field is required."},
             {ValidationMessagesKeys.NumberInRange, "Value should be in range from {0} to {1}."},
             {ValidationMessagesKeys.IntNotDefault, "Filed should contain non zero value."},
-            {ValidationMessagesKeys.InvalidCaptcha, "Field with CAPTCHA is invalid."},
+            {ValidationMessagesKeys.InvalidCaptcha, "File is too big."},
+            {ValidationMessagesKeys.WrongFileFormat, "File is in invalid format. Allowed formats: {0}."},
+            {ValidationMessagesKeys.OrderTooBig, "The files are too big in summary. The maximum size of all files is {0}."},
+
         };
     }
 }

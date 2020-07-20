@@ -43,5 +43,8 @@ namespace ResponseCreator.Translations
         public const string IntNotDefault = nameof(IntNotDefault);
         public const string NumberInRange = nameof(NumberInRange);
         public const string InvalidCaptcha = nameof(InvalidCaptcha);
+        public const string FileTooBig = nameof(FileTooBig);
+        public const string WrongFileFormat = nameof(WrongFileFormat);
+        public const string OrderTooBig = nameof(OrderTooBig);
     }
 }

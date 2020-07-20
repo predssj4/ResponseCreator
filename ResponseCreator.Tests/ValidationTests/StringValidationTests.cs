@@ -23,7 +23,7 @@ namespace ResponseCreator.Tests.ValidationTests
             string displayMessage)
         {
             // arrange
-            IResponseCreator responseCreator = ResponseCreatorDataFactory.Create();
+            IResponseCreator responseCreator = ResponseCreatorFactory.Create();
             var inputValidator = new InputValidator<string>(input, responseCreator);
 
             // act
@@ -55,7 +55,7 @@ namespace ResponseCreator.Tests.ValidationTests
             // arrange
             string key = "string_key";
 
-            IResponseCreator responseCreator = ResponseCreatorDataFactory.Create();
+            IResponseCreator responseCreator = ResponseCreatorFactory.Create();
             var inputValidator = new InputValidator<string>(input, responseCreator);
 
             // act

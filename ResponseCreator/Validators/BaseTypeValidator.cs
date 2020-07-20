@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Dynamic;
 using ResponseCreator.Abstract;
+using ResponseCreator.Extensions.String;
 using ResponseCreator.Translations;
 
 namespace ResponseCreator.Validators

@@ -2,7 +2,7 @@
 
 namespace ResponseCreator.Tests.DataFactories
 {
-    public class ResponseCreatorDataFactory
+    public class ResponseCreatorFactory
     {
         public static IResponseCreator Create()
         {

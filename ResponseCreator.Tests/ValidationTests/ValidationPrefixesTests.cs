@@ -108,7 +108,7 @@ namespace ResponseCreator.Tests.ValidationTests
         {
             // arrange
             var input = CreateStructureToValidation();
-            IResponseCreator responseCreator = ResponseCreatorDataFactory.Create();
+            IResponseCreator responseCreator = ResponseCreatorFactory.Create();
 
             // act
             input.ValidateInput(responseCreator);
@@ -124,7 +124,7 @@ namespace ResponseCreator.Tests.ValidationTests
         {
             // arrange
             var input = CreateStructureToValidation();
-            IResponseCreator responseCreator = ResponseCreatorDataFactory.Create();
+            IResponseCreator responseCreator = ResponseCreatorFactory.Create();
 
             // act
             input.ValidateInputWithCustomKeys(responseCreator);
@@ -140,7 +140,7 @@ namespace ResponseCreator.Tests.ValidationTests
         {
             // arrange
             var input = CreateStructureToValidation();
-            IResponseCreator responseCreator = ResponseCreatorDataFactory.Create();
+            IResponseCreator responseCreator = ResponseCreatorFactory.Create();
 
             string prefix = "SomeGeneralPrefix";
 
