@@ -46,5 +46,7 @@ namespace ResponseCreator.Translations
         public const string FileTooBig = nameof(FileTooBig);
         public const string WrongFileFormat = nameof(WrongFileFormat);
         public const string OrderTooBig = nameof(OrderTooBig);
+        public const string IsNotTrue = nameof(IsNotTrue);
+        public const string IsTrue = nameof(IsTrue);
     }
 }

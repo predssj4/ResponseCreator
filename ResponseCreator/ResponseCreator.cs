@@ -29,6 +29,11 @@ namespace ResponseCreator
             return this.CreteResponse<object>(null);
         }
 
+        public IEnumerable<MessageResult> GetMessages()
+        {
+            return this._messages;
+        }
+
         public bool IsValid()
         {
             return !HasAnyValidationOrBusinessErrors();
@@ -83,6 +88,11 @@ namespace ResponseCreator
             this.CheckAndChangeStatus();
         }
 
+        public IEnumerable<ValidationResult> GetValidationResults()
+        {
+            return this.ValidationResults;
+        }
+
         public void AddMessage(string message, BusinessResultType type)
         {
             this._messages.Add(new MessageResult() { Message = message, Type = type });
@@ -116,6 +126,11 @@ namespace ResponseCreator
         public void RemoveMessage(string message)
         {
             this._messages.Remove(this._messages.FirstOrDefault(x => x.Message == message));
+        }
+
+        public void ClearMessages()
+        {
+            this._messages.Clear();
         }
 
         private void CheckAndChangeStatus()

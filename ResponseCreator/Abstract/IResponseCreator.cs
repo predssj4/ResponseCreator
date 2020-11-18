@@ -22,8 +22,12 @@ namespace ResponseCreator.Abstract
 
         void RemoveValidationResult(string key);
 
+        IEnumerable<ValidationResult> GetValidationResults();
+
         void AddMessage(string message, BusinessResultType type);
         void RemoveMessage(string message);
+        void ClearMessages();
+        IEnumerable<MessageResult> GetMessages();
 
         bool IsValid();
 
